@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTop | HomePage</title>
+    <link rel="stylesheet" href="_css/homepage.css">
+    <link rel="stylesheet" href="_css/nav_footer.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="nav_img/logo1.png" alt="LOGO"></a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="#">PRODUCT</a>
+                    <ul>
+                        <li><a href="poloshirt.html">Polo Shirt</a></li>
+                        <li><a href="sweatshirt.html">Sweatshirt</a></li>
+                        <li><a href="sleeveless.html">Sleeveless</a></li>
+                        <li><a href="shirt.html">T-Shirt</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="login.html"><img src="nav_img/loginsignup.png" alt="Login/Signup"></a>
+
+                </li>
+                <li><a href="cart.html"><img src="nav_img/cart.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="carousel-slide slide-1">
+                <img src="homepage_img/banner.jpeg" alt="carousel1">
+            </div>
+            <div class="carousel-slide slide-2">
+                <img src="homepage_img/carousel2.webp" alt="carousel2">
+            </div>
+            <div class="carousel-slide slide-3">
+                <img src="homepage_img/carousel3.webp" alt="carousel3">
+            </div>
+            <div class="carousel-slide slide-4">
+                <img src="homepage_img/carousel4.webp" alt="carousel4">
+            </div>
+        </div>
+
+        <button class="carousel-arrow prev" id="prevBtn">‹</button>
+        <button class="carousel-arrow next" id="nextBtn">›</button>
+
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-slide="0"></div>
+            <div class="carousel-dot" data-slide="1"></div>
+            <div class="carousel-dot" data-slide="2"></div>
+            <div class="carousel-dot" data-slide="3"></div>
+        </div>
+    </div>
+
+    <section class="best-sellers" id="products">
+        <div class="container">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="products-grid">
+
+                <a href="poloshirt6.html" class="product-card-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div
+                            style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            <img src="homepage_img/newknit.png" alt="Knitted Polo">
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Knitted Polo</h3>
+                        <div class="product-price">RM80.00</div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="poloshirt4.html" class="product-card-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div
+                            style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            <img src="homepage_img/longsleeve.png" alt="Long Sleeve Polo">
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Long Sleeve Polo</h3>
+                        <div class="product-price">RM59.00</div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="shirt3.html" class="product-card-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div
+                            style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            <img src="homepage_img/oversizedtee.png" alt="OverSized Tee">
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Oversized Drop Shoulder Tee</h3>
+                        <div class="product-price">RM50.00</div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="sleeveless4.html" class="product-card-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div
+                            style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            <img src="homepage_img/athletic.png" alt="Athletic">
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Athletic Sleeveless Tee</h3>
+                        <div class="product-price">RM50.00</div>
+                    </div>
+                </div>
+                </a>
+                
+                <a href="sweatshirt2.html" class="product-card-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div
+                            style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                            <img src="homepage_img/blank-hoodie.jpg" alt="Hooded Hoodie">
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hooded Sweatshirt</h3>
+                        <div class="product-price">RM80.00</div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer><small><i>Copyright &copy; Easy Top Sdn.Bhd. All Rights Reserved.</i></small></footer>
+    <script src="_js/homepage.js"> </script>
+</body>
+
+</html>

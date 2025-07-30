@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweatshirt | Crew Neck Sweatshirtp</title>
+  <link rel="stylesheet" href="_css/nav_footer.css">
+  <style>
+    main {
+      padding: 40px 20px;
+      margin-top: 80px;
+    }
+
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: rgb(2, 2, 2);
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .image-container {
+      flex: 1 1 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      width: 600px;
+      height: 425px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info-container {
+      flex: 1 1 50%;
+    }
+
+    .size-selector button,
+    .quantity-selector button,
+    .add-to-cart {
+      padding: 10px 15px;
+      margin: 5px 5px 15px 0;
+      cursor: pointer;
+      border: 1px solid #aaa;
+      background-color: #f8f8f8;
+    }
+
+    .size-selector button:hover,
+    .quantity-selector button:hover,
+    .add-to-cart:hover {
+      background-color: #ddd;
+    }
+
+    .color-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid #ccc;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .color-selector button.selected {
+      background-color: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .quantity-selector input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+      margin: 0 5px;
+      margin-top: 5px;
+    }
+
+    .size-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid #ccc;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .size-selector button.selected {
+      background-color: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo"><img src="nav_img/logo1.png" alt="LOGO"></a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="homepage.html">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="#">PRODUCT</a>
+          <ul>
+            <li><a href="poloshirt.html">Polo Shirt</a></li>
+            <li><a href="sweatshirt.html">Sweatshirt</a></li>
+            <li><a href="sleeveless.html">Sleeveless</a></li>
+            <li><a href="shirt.html">T-Shirt</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="login.html"><img src="nav_img/loginsignup.png" alt="Login/Signup"></a>
+
+        </li>
+        <li><a href="cart.html"><img src="nav_img/cart.png" alt="Cart"></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="product-section">
+      <div class="image-container">
+        <img src="sweatshirt_img/crewneck.png" alt="Crew Neck Sweatshirt" />
+      </div>
+      <div class="info-container">
+        <h2>Crew Neck Sweatshirt</h2>
+        <p>A classic and comfy sweatshirt with a timeless crew neckline—perfect for casual everyday wear.</p>
+        <div class="price">RM70.00</div>
+        <div class="size-selector">
+          <h4>Select Size:</h4>
+          <button onclick="selectSize(this)" data-price="70">S</button>
+          <button onclick="selectSize(this)" data-price="70">M</button>
+          <button onclick="selectSize(this)" data-price="70">L</button>
+          <button onclick="selectSize(this)" data-price="70">XL</button>
+        </div>
+        <div class="color-selector">
+          <h4>Select Color:</h4>
+          <button onclick="selectColor(this)" data-color="Red">Red</button>
+          <button onclick="selectColor(this)" data-color="Blue">Blue</button>
+          <button onclick="selectColor(this)" data-color="Green">Green</button>
+          <button onclick="selectColor(this)" data-color="Black">Black</button>
+        </div>
+
+        <div class="quantity-selector">
+          <h4>Quantity:</h4>
+          <input id="quantity" type="number" value="1" min="1" />
+        </div>
+
+        <button onclick="calculatePrice()">Calculate Price</button>
+        <p id="total-price" style="font-weight: bold; margin-top: 10px;"></p>
+
+        <button class="add-to-cart" onclick="saveToCart()">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script src="_js/product.js"></script>
+  <script>
+    function saveToCart() {
+      const selectedSizeButton = document.querySelector('.size-selector button.selected');
+      const selectedColorButton = document.querySelector('.color-selector button.selected');
+      const quantity = parseInt(document.getElementById('quantity').value);
+
+      if (!selectedSizeButton || !selectedColorButton) {
+        alert("Please select both size and color before adding to cart.");
+        return;
+      }
+
+      const sizeText = selectedSizeButton.innerText.split(" - ")[0];
+      const colorText = selectedColorButton.getAttribute('data-color');
+      const price = parseFloat(selectedSizeButton.getAttribute('data-price'));
+      const total = price * quantity;
+
+      const cartItem = {
+        productName: "Crew Neck Sweatshirt",
+        size: sizeText,
+        color: colorText,
+        quantity: quantity,
+        unitPrice: price,
+        totalPrice: total
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      window.location.href = "cart.html";
+    }
+
+  </script>
+  <footer><small><i>Copyright &copy; Easy Top Sdn.Bhd. All Rights Reserved.</i></small></footer>
+</body>
+
+</html>
